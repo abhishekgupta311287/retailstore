@@ -1,4 +1,4 @@
-package com.abhishek.retailstore.repo.db
+package com.abhishek.retailstore.repo
 
 import com.abhishek.retailstore.model.Cart
 
