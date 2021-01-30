@@ -5,20 +5,17 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import com.abhishek.retailstore.R
 import com.abhishek.retailstore.ui.main.RetailStoreViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RetailStoreActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: RetailStoreViewModel
+    private val viewModel: RetailStoreViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-
-        viewModel = ViewModelProviders.of(this).get(RetailStoreViewModel::class.java)
-
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
@@ -32,6 +29,10 @@ class RetailStoreActivity : AppCompatActivity() {
                 .addToBackStack("RetailStoreFragment")
                 .commit()
         })
+
+        viewModel.cartListLiveData.observe(this, Observer {
+
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -41,6 +42,11 @@ class RetailStoreActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.showCart) {
+            viewModel.fetchCart()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container, CartFragment.newInstance())
+                .addToBackStack("Fragment")
+                .commit()
 //            item.setIcon(R.drawable.shopping_cart_filled)
         }
         return super.onOptionsItemSelected(item)

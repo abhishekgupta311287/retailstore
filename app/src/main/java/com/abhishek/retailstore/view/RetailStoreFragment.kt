@@ -2,7 +2,6 @@ package com.abhishek.retailstore.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.abhishek.retailstore.R
@@ -11,6 +10,7 @@ import com.abhishek.retailstore.model.Product
 import com.abhishek.retailstore.ui.main.RetailStoreViewModel
 import com.abhishek.retailstore.view.adapter.CategoryAdapter
 import kotlinx.android.synthetic.main.main_fragment.*
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class RetailStoreFragment : Fragment(R.layout.main_fragment), IProductListener {
 
@@ -18,12 +18,10 @@ class RetailStoreFragment : Fragment(R.layout.main_fragment), IProductListener {
         fun newInstance() = RetailStoreFragment()
     }
 
-    private lateinit var viewModel: RetailStoreViewModel
+    private val viewModel by sharedViewModel<RetailStoreViewModel>()
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(requireActivity()).get(RetailStoreViewModel::class.java)
-
         val categories = ArrayList<Category>()
 
         val product = Product(1, "Microwave Oven", 8000.0, R.drawable.microwave)
