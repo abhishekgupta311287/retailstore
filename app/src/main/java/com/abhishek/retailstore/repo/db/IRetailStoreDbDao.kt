@@ -9,9 +9,6 @@ interface IRetailStoreDbDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addToCart(cart: Cart)
 
-//    @Query("UPDATE cart_ SET quantity = quantity+1 and totalPrice = :totalPrice WHERE id = :id")
-//    suspend fun updateQuantity(id: Int, totalPrice: Double)
-
     @Delete
     suspend fun deleteFromCart(cart: Cart)
 
