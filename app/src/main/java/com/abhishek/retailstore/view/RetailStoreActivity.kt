@@ -12,6 +12,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class RetailStoreActivity : AppCompatActivity() {
 
     private val viewModel: RetailStoreViewModel by viewModel()
+    private lateinit var showCartMenuItem: MenuItem
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,8 +20,8 @@ class RetailStoreActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, RetailStoreFragment.newInstance())
-                    .commit()
+                .replace(R.id.container, RetailStoreFragment.newInstance())
+                .commit()
         }
 
         viewModel.selectedProduct.observe(this, Observer {
@@ -29,10 +30,23 @@ class RetailStoreActivity : AppCompatActivity() {
                 .addToBackStack("RetailStoreFragment")
                 .commit()
         })
+
+        viewModel.cartListLiveData.observe(this, Observer {
+            showCartMenuItem.setIcon(
+                if (it.first.isEmpty()) {
+                    R.drawable.shopping_cart_empty
+                } else {
+                    R.drawable.shopping_cart_filled
+                }
+            )
+        })
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        viewModel.fetchCart()
         menuInflater.inflate(R.menu.menu, menu)
+        showCartMenuItem = menu!!.findItem(R.id.showCart)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -43,7 +57,6 @@ class RetailStoreActivity : AppCompatActivity() {
                 .replace(R.id.container, CartFragment.newInstance())
                 .addToBackStack("Fragment")
                 .commit()
-//            item.setIcon(R.drawable.shopping_cart_filled)
         }
         return super.onOptionsItemSelected(item)
     }

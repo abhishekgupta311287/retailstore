@@ -20,6 +20,9 @@ class RetailStoreViewModel(private val repo: IRetailStoreRepo) : ViewModel() {
                     product
                 )
             )
+
+            cartListLiveData.value = fetchCartWithTotalPrice()
+
         }
 
     }
