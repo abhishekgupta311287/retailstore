@@ -1,4 +1,4 @@
-package com.abhishek.retailstore.ui.main
+package com.abhishek.retailstore.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 
 class RetailStoreViewModel(private val repo: IRetailStoreRepo) : ViewModel() {
     val selectedProduct: MutableLiveData<Product> = MutableLiveData()
-    val cartListLiveData: MutableLiveData<List<Cart>> = MutableLiveData()
+    val cartListLiveData: MutableLiveData<Pair<List<Cart>, Double>> = MutableLiveData()
 
     fun addToCart(product: Product) {
         viewModelScope.launch {
@@ -26,14 +26,21 @@ class RetailStoreViewModel(private val repo: IRetailStoreRepo) : ViewModel() {
 
     fun fetchCart() {
         viewModelScope.launch {
-            cartListLiveData.value = repo.getProductsFromCart()
+            cartListLiveData.value = fetchCartWithTotalPrice()
         }
     }
 
     fun deleteCartProduct(cart: Cart) {
         viewModelScope.launch {
             repo.deleteFromCart(cart)
-            cartListLiveData.value = repo.getProductsFromCart()
+            cartListLiveData.value = fetchCartWithTotalPrice()
         }
+    }
+
+    private suspend fun fetchCartWithTotalPrice():Pair<List<Cart>, Double> {
+        val productsFromCart = repo.getProductsFromCart()
+        val cartTotalPrice = productsFromCart.sumByDouble { it.totalPrice }
+
+        return Pair(productsFromCart, cartTotalPrice)
     }
 }

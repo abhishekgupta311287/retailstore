@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.abhishek.retailstore.R
 import com.abhishek.retailstore.model.Category
 import com.abhishek.retailstore.model.Product
-import com.abhishek.retailstore.ui.main.RetailStoreViewModel
 import com.abhishek.retailstore.view.adapter.CategoryAdapter
+import com.abhishek.retailstore.viewmodel.RetailStoreViewModel
 import kotlinx.android.synthetic.main.main_fragment.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 

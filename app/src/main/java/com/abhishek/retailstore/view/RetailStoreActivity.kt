@@ -6,7 +6,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.abhishek.retailstore.R
-import com.abhishek.retailstore.ui.main.RetailStoreViewModel
+import com.abhishek.retailstore.viewmodel.RetailStoreViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RetailStoreActivity : AppCompatActivity() {
@@ -28,10 +28,6 @@ class RetailStoreActivity : AppCompatActivity() {
                 .replace(R.id.container, ProductDetailsFragment.newInstance())
                 .addToBackStack("RetailStoreFragment")
                 .commit()
-        })
-
-        viewModel.cartListLiveData.observe(this, Observer {
-
         })
     }
 

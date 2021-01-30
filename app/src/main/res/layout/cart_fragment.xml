@@ -17,17 +17,16 @@
         android:id="@+id/cartRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/cartTotal"
+        app:layout_constraintBottom_toTopOf="@+id/cartTotalPrice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="40dp"
         app:layout_constraintTop_toBottomOf="@+id/titleLayout" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/cartTotal"
+        android:id="@+id/cartTotalPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total = 20000.0"
         android:layout_marginEnd="44dp"
         android:textSize="@dimen/product_price_size"
         app:layout_constraintEnd_toEndOf="parent"

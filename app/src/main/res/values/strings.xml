@@ -9,4 +9,8 @@
     <string name="product_price_title">Price</string>
     <string name="product_quantity_title">Quantity</string>
     <string name="cart_title_total_price">Total Price</string>
+    <string name="cart_total_price">Cart Total Price = %s</string>
+    <string name="added_to_cart_msg">%s added to cart</string>
+    <string name="deleted_frm_cart_msg">%s deleted from cart</string>
+
 </resources>
