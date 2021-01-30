@@ -12,5 +12,6 @@
     <string name="cart_total_price">Cart Total Price = %s</string>
     <string name="added_to_cart_msg">%s added to cart</string>
     <string name="deleted_frm_cart_msg">%s deleted from cart</string>
+    <string name="no_items_msg">No Products in Cart. Add few and Check out!</string>
 
 </resources>

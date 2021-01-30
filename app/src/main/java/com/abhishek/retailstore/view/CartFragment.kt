@@ -1,6 +1,7 @@
 package com.abhishek.retailstore.view
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -40,9 +41,21 @@ class CartFragment : Fragment(R.layout.cart_fragment), IProductListener, ICartDe
 
         viewModel.cartListLiveData.observe(viewLifecycleOwner, Observer {
             val (list, totalPrice) = it
-            cartAdapter.cartProductList = list
-            cartAdapter.notifyDataSetChanged()
-            cartTotalPrice.text = getString(R.string.cart_total_price, totalPrice.toString())
+            val visibility = if (list.isEmpty()) {
+                noItemsMsg.visibility = View.VISIBLE
+                View.GONE
+            } else {
+                cartAdapter.cartProductList = list
+                cartAdapter.notifyDataSetChanged()
+                cartTotalPrice.text = getString(R.string.cart_total_price, totalPrice.toString())
+
+                noItemsMsg.visibility = View.GONE
+                View.VISIBLE
+            }
+
+            cartRecyclerView.visibility = visibility
+            titleLayout.visibility = visibility
+            cartTotalPrice.visibility = visibility
         })
 
     }
