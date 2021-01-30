@@ -5,6 +5,9 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.abhishek.retailstore.R
+import com.abhishek.retailstore.view.cart.CartFragment
+import com.abhishek.retailstore.view.details.ProductDetailsFragment
+import com.abhishek.retailstore.view.home.RetailStoreFragment
 import com.abhishek.retailstore.viewmodel.RetailStoreViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

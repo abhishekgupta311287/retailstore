@@ -1,4 +1,4 @@
-package com.abhishek.retailstore.view
+package com.abhishek.retailstore.view.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.abhishek.retailstore.R
 import com.abhishek.retailstore.model.Category
 import com.abhishek.retailstore.model.Product
-import com.abhishek.retailstore.view.adapter.CategoryAdapter
+import com.abhishek.retailstore.view.IProductListener
+import com.abhishek.retailstore.view.home.adapter.CategoryAdapter
 import com.abhishek.retailstore.viewmodel.RetailStoreViewModel
 import kotlinx.android.synthetic.main.main_fragment.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel

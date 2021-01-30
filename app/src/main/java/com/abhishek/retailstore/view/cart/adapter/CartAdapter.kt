@@ -1,4 +1,4 @@
-package com.abhishek.retailstore.view.adapter
+package com.abhishek.retailstore.view.cart.adapter
 
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import com.abhishek.retailstore.model.Cart
 import com.abhishek.retailstore.view.ICartDeleteListener
 import com.abhishek.retailstore.view.IProductListener
 import com.abhishek.retailstore.view.viewholder.BaseViewHolder
-import com.abhishek.retailstore.view.viewholder.CartViewHolder
+import com.abhishek.retailstore.view.cart.viewholder.CartViewHolder
 import kotlinx.android.synthetic.main.cart_item_layout.view.*
 
 class CartAdapter<T>(

@@ -1,8 +1,9 @@
-package com.abhishek.retailstore.view.viewholder
+package com.abhishek.retailstore.view.home.viewholder
 
 import android.view.View
 import androidx.core.content.res.ResourcesCompat
 import com.abhishek.retailstore.model.Product
+import com.abhishek.retailstore.view.viewholder.BaseViewHolder
 import kotlinx.android.synthetic.main.item_layout.view.*
 
 class ItemViewHolder<T>(view: View) : BaseViewHolder<T>(view) {

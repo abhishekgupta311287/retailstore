@@ -1,11 +1,12 @@
-package com.abhishek.retailstore.view.viewholder
+package com.abhishek.retailstore.view.home.viewholder
 
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.abhishek.retailstore.model.Category
 import com.abhishek.retailstore.model.Product
 import com.abhishek.retailstore.view.IProductListener
-import com.abhishek.retailstore.view.adapter.ItemAdapter
+import com.abhishek.retailstore.view.home.adapter.ItemAdapter
+import com.abhishek.retailstore.view.viewholder.BaseViewHolder
 import kotlinx.android.synthetic.main.category_layout.view.*
 
 class CategoryViewHolder<T>(view: View, private val listener: IProductListener) : BaseViewHolder<T>(view) {

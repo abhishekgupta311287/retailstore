@@ -1,4 +1,4 @@
-package com.abhishek.retailstore.view
+package com.abhishek.retailstore.view.cart
 
 import android.os.Bundle
 import android.view.View
@@ -10,7 +10,9 @@ import com.abhishek.retailstore.R
 import com.abhishek.retailstore.model.Cart
 import com.abhishek.retailstore.model.Category
 import com.abhishek.retailstore.model.Product
-import com.abhishek.retailstore.view.adapter.CartAdapter
+import com.abhishek.retailstore.view.ICartDeleteListener
+import com.abhishek.retailstore.view.IProductListener
+import com.abhishek.retailstore.view.cart.adapter.CartAdapter
 import com.abhishek.retailstore.viewmodel.RetailStoreViewModel
 import kotlinx.android.synthetic.main.cart_fragment.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel

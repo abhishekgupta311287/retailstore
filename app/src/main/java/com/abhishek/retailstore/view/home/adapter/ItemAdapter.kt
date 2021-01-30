@@ -1,4 +1,4 @@
-package com.abhishek.retailstore.view.adapter
+package com.abhishek.retailstore.view.home.adapter
 
 import android.view.View
 import android.view.ViewGroup
@@ -7,7 +7,7 @@ import com.abhishek.retailstore.R
 import com.abhishek.retailstore.model.Product
 import com.abhishek.retailstore.view.IProductListener
 import com.abhishek.retailstore.view.viewholder.BaseViewHolder
-import com.abhishek.retailstore.view.viewholder.ItemViewHolder
+import com.abhishek.retailstore.view.home.viewholder.ItemViewHolder
 
 class ItemAdapter<T>(private val listener: IProductListener) : RecyclerView.Adapter<BaseViewHolder<T>>() {
 

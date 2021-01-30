@@ -1,7 +1,8 @@
-package com.abhishek.retailstore.view.viewholder
+package com.abhishek.retailstore.view.cart.viewholder
 
 import android.view.View
 import com.abhishek.retailstore.model.Cart
+import com.abhishek.retailstore.view.viewholder.BaseViewHolder
 import kotlinx.android.synthetic.main.cart_item_layout.view.*
 
 class CartViewHolder<T>(view: View) : BaseViewHolder<T>(view) {

@@ -1,4 +1,4 @@
-package com.abhishek.retailstore.view
+package com.abhishek.retailstore.view.details
 
 import android.os.Bundle
 import android.widget.Toast
