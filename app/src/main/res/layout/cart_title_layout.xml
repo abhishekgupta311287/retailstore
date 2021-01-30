@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/item_padding">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cartTitleName"
+        android:layout_width="@dimen/cart_product_name_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_top"
+        android:text="@string/product_name_title"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cartTitlePrice"
+        android:layout_width="@dimen/cart_product_price_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_top"
+        android:text="@string/product_price_title"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/cartTitleName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cartTitleQuantity"
+        android:layout_width="@dimen/cart_product_quantity_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_top"
+        android:text="@string/product_quantity_title"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/cartTitlePrice"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cartTitleTotalPrice"
+        android:layout_width="@dimen/cart_price_total_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_top"
+        android:text="@string/cart_title_total_price"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/cartTitleQuantity"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

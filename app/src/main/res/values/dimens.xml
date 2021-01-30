@@ -13,4 +13,9 @@
     <dimen name="product_price_size">20sp</dimen>
     <dimen name="image_padding">12dp</dimen>
     <dimen name="product_image_height">500dp</dimen>
+    <dimen name="cart_product_name_width">120dp</dimen>
+    <dimen name="cart_product_price_width">80dp</dimen>
+    <dimen name="cart_product_quantity_width">60dp</dimen>
+    <dimen name="cart_price_total_width">80dp</dimen>
+    <dimen name="delete_icon_size">20dp</dimen>
 </resources>
