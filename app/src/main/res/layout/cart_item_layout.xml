@@ -21,6 +21,7 @@
         android:layout_width="@dimen/cart_product_price_width"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_top"
+        android:textAlignment="textEnd"
         android:hint="@string/product_price_hint"
         app:layout_constraintStart_toEndOf="@+id/cartProductName"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,7 +30,7 @@
         android:id="@+id/cartProductQuantity"
         android:layout_width="@dimen/cart_product_quantity_width"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_top"
+        android:textAlignment="center"
         android:hint="100"
         app:layout_constraintStart_toEndOf="@+id/cartProductPrice"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,15 +40,17 @@
         android:layout_width="@dimen/cart_price_total_width"
         android:layout_height="wrap_content"
         android:hint="@string/product_price_hint"
+        android:textAlignment="textEnd"
         app:layout_constraintStart_toEndOf="@+id/cartProductQuantity"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/deleteCartProduct"
         android:layout_width="@dimen/delete_icon_size"
         android:layout_height="@dimen/delete_icon_size"
         android:layout_marginStart="@dimen/margin_top"
-        android:layout_marginEnd="@dimen/margin_top"
         android:src="@drawable/delete_icon"
+        app:layout_constraintStart_toEndOf="@+id/cartProductTotalPrice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

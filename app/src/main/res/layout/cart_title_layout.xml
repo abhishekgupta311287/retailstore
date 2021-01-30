@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_top"
         android:text="@string/product_price_title"
+        android:textAlignment="center"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/cartTitleName"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +31,6 @@
         android:id="@+id/cartTitleQuantity"
         android:layout_width="@dimen/cart_product_quantity_width"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_top"
         android:text="@string/product_quantity_title"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/cartTitlePrice"
@@ -42,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_top"
         android:text="@string/cart_title_total_price"
+        android:textAlignment="center"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/cartTitleQuantity"
         app:layout_constraintTop_toTopOf="parent" />

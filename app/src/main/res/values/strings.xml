@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">RetailStore</string>
     <string name="product_name_hint">Microwave Oven</string>
-    <string name="product_price_hint">Rs. 20000</string>
+    <string name="product_price_hint">20000</string>
     <string name="category_name_hint">Electronics</string>
     <string name="add_to_cart">Add To Cart</string>
     <string name="cart">Cart</string>
