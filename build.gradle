@@ -21,6 +21,8 @@ buildscript {
         versions.lifecycle = '2.2.0'
         versions.material = '1.2.1'
 
+        versions.gson = '2.8.6'
+
         versions.glide = '4.11.0'
 
         versions.multidex = '2.0.1'

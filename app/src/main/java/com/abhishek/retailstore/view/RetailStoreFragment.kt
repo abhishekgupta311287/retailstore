@@ -2,6 +2,7 @@ package com.abhishek.retailstore.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.abhishek.retailstore.R
@@ -22,31 +23,6 @@ class RetailStoreFragment : Fragment(R.layout.main_fragment), IProductListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val categories = ArrayList<Category>()
-
-        val product = Product(1, "Microwave Oven", 8000.0, R.drawable.microwave)
-        val category = Category(
-            1,
-            "Electronics",
-            arrayListOf(
-                product,
-                product.copy(id = 2, name = "Television", price = 30000.0, image = R.drawable.television),
-                product.copy(id = 3, name = "Vacuum Cleaner", price = 15000.0, image = R.drawable.vacuum)
-            )
-        )
-
-        categories.add(category)
-        categories.add(
-            category.copy(
-                id = 2,
-                name = "Furniture",
-                products = arrayListOf(
-                    product.copy(id = 4, name = "Table", price = 3000.0, image = R.drawable.table),
-                    product.copy(id = 5, name = "Chair", price = 800.0, image = R.drawable.chair),
-                    product.copy(id = 6, name = "Almirah", price = 10000.0, image = R.drawable.almirah)
-                )
-            )
-        )
 
         categoryRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         categoryRecyclerView.addItemDecoration(
@@ -59,7 +35,10 @@ class RetailStoreFragment : Fragment(R.layout.main_fragment), IProductListener {
         val categoryAdapter = CategoryAdapter<Category>(this)
 
         categoryRecyclerView.adapter = categoryAdapter
-        categoryAdapter.categories = categories
+
+        viewModel.categoriesLiveData.observe(viewLifecycleOwner, Observer {
+            categoryAdapter.categories = it
+        })
     }
 
     override fun onProductSelected(product: Product) {
