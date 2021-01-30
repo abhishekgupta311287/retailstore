@@ -2,7 +2,6 @@ package com.abhishek.retailstore.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.abhishek.retailstore.R
@@ -36,7 +35,7 @@ class RetailStoreFragment : Fragment(R.layout.main_fragment), IProductListener {
 
         categoryRecyclerView.adapter = categoryAdapter
 
-        viewModel.categoriesLiveData.observe(viewLifecycleOwner, Observer {
+        viewModel.categoriesLiveData.observe(viewLifecycleOwner, {
             categoryAdapter.categories = it
         })
     }

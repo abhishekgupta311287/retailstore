@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import com.abhishek.retailstore.R
 import com.abhishek.retailstore.viewmodel.RetailStoreViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -24,14 +23,14 @@ class RetailStoreActivity : AppCompatActivity() {
                 .commit()
         }
 
-        viewModel.selectedProduct.observe(this, Observer {
+        viewModel.selectedProduct.observe(this, {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, ProductDetailsFragment.newInstance())
                 .addToBackStack("RetailStoreFragment")
                 .commit()
         })
 
-        viewModel.cartListLiveData.observe(this, Observer {
+        viewModel.cartListLiveData.observe(this, {
             showCartMenuItem.setIcon(
                 if (it.first.isEmpty()) {
                     R.drawable.shopping_cart_empty

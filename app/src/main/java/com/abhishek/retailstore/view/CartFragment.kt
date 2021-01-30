@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.abhishek.retailstore.R
@@ -39,7 +38,7 @@ class CartFragment : Fragment(R.layout.cart_fragment), IProductListener, ICartDe
 
         cartRecyclerView.adapter = cartAdapter
 
-        viewModel.cartListLiveData.observe(viewLifecycleOwner, Observer {
+        viewModel.cartListLiveData.observe(viewLifecycleOwner, {
             val (list, totalPrice) = it
             val visibility = if (list.isEmpty()) {
                 noItemsMsg.visibility = View.VISIBLE

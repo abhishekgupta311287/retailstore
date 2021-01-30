@@ -16,12 +16,12 @@ interface IRetailStoreDbDao {
     suspend fun getProductsFromCart(): List<Cart>
 
     @Query("Select * from cart_ where id= :id")
-    suspend fun getProductQuantity(id: Int): Cart
+    suspend fun isProductExistsInCart(id: Int): Cart?
 
     @Transaction
     suspend fun insertOrUpdate(cart: Cart) {
 
-        val existingCart: Cart? = getProductQuantity(cart.product.id)
+        val existingCart: Cart? = isProductExistsInCart(cart.product.id)
 
         val quantity = existingCart?.quantity ?: 0
         addToCart(

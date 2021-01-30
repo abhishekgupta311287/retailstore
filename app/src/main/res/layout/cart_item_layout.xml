@@ -31,7 +31,6 @@
         android:layout_width="@dimen/cart_product_quantity_width"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:hint="100"
         app:layout_constraintStart_toEndOf="@+id/cartProductPrice"
         app:layout_constraintTop_toTopOf="parent" />
 
