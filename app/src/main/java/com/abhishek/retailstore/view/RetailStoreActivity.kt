@@ -1,6 +1,8 @@
 package com.abhishek.retailstore.view
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -30,5 +32,17 @@ class RetailStoreActivity : AppCompatActivity() {
                 .addToBackStack("RetailStoreFragment")
                 .commit()
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.showCart) {
+//            item.setIcon(R.drawable.shopping_cart_filled)
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
